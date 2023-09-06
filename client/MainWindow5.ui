@@ -1,0 +1,22 @@
+<UI version="4.0" >
+ <class>MainWindow5Class</class>
+ <widget class="QWidget" name="MainWindow5Class" >
+  <property name="objectName" >
+   <string notr="true">MainWindow5Class</string>
+  </property>
+  <property name="geometry" >
+   <rect>
+	<x>0</x>
+	<y>0</y>
+	<width>600</width>
+	<height>400</height>
+   </rect>
+  </property>
+  <property name="windowTitle" >
+   <string>MainWindow5</string>
+  </property>$centralwidget$
+ </widget>
+ <layoutDefault spacing="6" margin="11" />
+ <pixmapfunction></pixmapfunction>
+ <connections/>
+</UI>

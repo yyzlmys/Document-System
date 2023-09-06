@@ -1,0 +1,19 @@
+﻿  Insert.cpp
+  Query.cpp
+D:\qt6\6.5.2\msvc2019_64\include\QtCore\qtcoreexports.h(1,1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失 (编译源文件 Query.cpp)
+D:\qt6\6.5.2\msvc2019_64\include\QtCore\qtcoreexports.h(1,1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失 (编译源文件 Insert.cpp)
+D:\qt6\6.5.2\msvc2019_64\include\QtCore\qtcoreexports.h(1,1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失 (编译源文件 Query.cpp)
+D:\qt6\6.5.2\msvc2019_64\include\QtCore\qtcoreexports.h(1,1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失 (编译源文件 Insert.cpp)
+D:\qt6\6.5.2\msvc2019_64\include\QtCore\qtcoreexports.h(1,1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失 (编译源文件 Query.cpp)
+D:\qt6\6.5.2\msvc2019_64\include\QtCore\qtcoreexports.h(1,1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失 (编译源文件 Insert.cpp)
+D:\qt6\6.5.2\msvc2019_64\include\QtCore\qtcoreexports.h(1,1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失 (编译源文件 Insert.cpp)
+D:\qt6\6.5.2\msvc2019_64\include\QtCore\qtcoreexports.h(1,1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失 (编译源文件 Query.cpp)
+D:\qt6\6.5.2\msvc2019_64\include\QtCore\qtcoreexports.h(1,1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失 (编译源文件 Query.cpp)
+D:\qt6\6.5.2\msvc2019_64\include\QtCore\qtcoreexports.h(1,1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失 (编译源文件 Insert.cpp)
+D:\qt6\6.5.2\msvc2019_64\include\QtCore\qtcoreexports.h(1,1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失 (编译源文件 Query.cpp)
+D:\qt6\6.5.2\msvc2019_64\include\QtCore\qtcoreexports.h(1,1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失 (编译源文件 Insert.cpp)
+D:\qt6\6.5.2\msvc2019_64\include\QtNetwork\qtnetworkexports.h(1,1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失 (编译源文件 Query.cpp)
+D:\qt6\6.5.2\msvc2019_64\include\QtNetwork\qtnetworkexports.h(1,1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失 (编译源文件 Insert.cpp)
+D:\qt6\6.5.2\msvc2019_64\include\QtGui\qtguiexports.h(1,1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失 (编译源文件 Insert.cpp)
+D:\qt6\6.5.2\msvc2019_64\include\QtWidgets\qtwidgetsexports.h(1,1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失 (编译源文件 Insert.cpp)
+  vs_qt.vcxproj -> D:\vs_qt\x64\Debug\vs_qt.exe
