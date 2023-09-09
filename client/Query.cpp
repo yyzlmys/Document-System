@@ -9,8 +9,6 @@ Query::Query(QObject *parent)
 
 void Query::sendData(int messageType, const QByteArray& data)
 {
-    qDebug() << "query Send : " << QThread::currentThread();
-
     QByteArray message;
     QDataStream stream(&message, QIODevice::WriteOnly);
     stream.setByteOrder(QDataStream::BigEndian);  // Set to network byte order
@@ -18,39 +16,43 @@ void Query::sendData(int messageType, const QByteArray& data)
     stream << static_cast<int>(data.size());
     stream.writeRawData(data.data(), data.size());
 
-    QTcpSocket* clsocket = new QTcpSocket;
+    QTcpSocket* skt = new QTcpSocket;
+    connect(skt, &QTcpSocket::connected, this, [=]()
+    {
+        skt->write(message);
+    });
     auto ip = QStringLiteral("123.60.157.65");
     auto port = 20245;
-    clsocket->connectToHost(ip, port);
-    clsocket->write(message);
-    connect(clsocket, &QTcpSocket::readyRead, this, [=]()
-    {
-        qDebug() << "query Recv : " << QThread::currentThread();
+    skt->connectToHost(ip, port);
 
-        QByteArray d = clsocket->read(sizeof(int));
-        int size = *reinterpret_cast<const int*>(d.data());
-        qDebug() << "the read size is " << size;
-        d.clear();
-        
+    connect(skt, &QTcpSocket::readyRead, this, [=]()
+    {
+        if (!rh)
+        {
+            QByteArray dt;
+            dt = skt->read(sizeof(int));
+            size = *reinterpret_cast<const int*>(dt.data());
+            rh = true;
+        }
+
         if (size > 0)
         {
-            while (d.size() < size && clsocket->bytesAvailable())
+            if (d.size() < size)
             {
-                d += clsocket->read(size - d.size());
+                d.append(skt->readAll());
             }
+            if (d.size() < size) return;
             QJsonArray* res = new QJsonArray;
             *res = QJsonDocument::fromJson(d).array();
             emit query_finish(size, res);
-        }
-        else if(size == -5)
-        {
-            clsocket->close();
-            clsocket->deleteLater();  
         }
         else
         {
             emit query_finish(size, nullptr);
         }
-        
+        skt->close();
+        skt->deleteLater();
+        rh = false;
+        d.clear();
     });
 }

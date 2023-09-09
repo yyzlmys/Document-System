@@ -5,7 +5,6 @@
 #include "MainWindow4.h"
 #include "MainWindow5.h"
 #include <QApplication>
-#include <QDebug>
 
 int main(int argc, char* argv[])
 {

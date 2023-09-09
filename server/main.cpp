@@ -116,6 +116,7 @@ void communicate(int fd)
 		else
 		{
 			bool isEmpty = true;
+			Value root;
 			while (auto row = conn->next())
 			{
 				isEmpty = false;
@@ -126,13 +127,7 @@ void communicate(int fd)
 					if (field_data) jrow.append(field_data);
 					else jrow.append("");
 				}
-				FastWriter fw;
-				string ss = fw.write(jrow);
-				int size = ss.size();
-				char b[sizeof(int) + size];
-				memcpy(b, &size, sizeof(int));
-				memcpy(b + sizeof(int), ss.c_str(), size);
-				sendn(fd, b, sizeof(int) + size);
+				root.append(jrow);
 			}
 			if (isEmpty)
 			{
@@ -142,11 +137,19 @@ void communicate(int fd)
 				sendn(fd, b, sizeof(int));
 				cout << "no res" << endl;
 			}
+			else
+			{
+				FastWriter fw;
+				string ss = fw.write(root);
+				int size = ss.size();
+				char* b = new char[sizeof(int) + size];
+				memcpy(b, &size, sizeof(int));
+				memcpy(b + sizeof(int), ss.c_str(), size);
+				sendn(fd, b, sizeof(int) + size);
+				usleep(5000);
+				delete[] b;
+			}
 		}
-		int x = -5;
-		char bx[sizeof(int)];
-		memcpy(bx, &x, sizeof(int));
-		sendn(fd, bx, sizeof(int));
 
 		break; }
 
@@ -182,6 +185,7 @@ void communicate(int fd)
 		else
 		{
 			bool isEmpty = true;
+			Value root;
 			while (auto row = conn->next())
 			{
 				isEmpty = false;
@@ -192,13 +196,7 @@ void communicate(int fd)
 					if (field_data) jrow.append(field_data);
 					else jrow.append("");
 				}
-				FastWriter fw;
-				string ss = fw.write(jrow);
-				int size = ss.size();
-				char b[sizeof(int) + size];
-				memcpy(b, &size, sizeof(int));
-				memcpy(b + sizeof(int), ss.c_str(), size);
-				sendn(fd, b, sizeof(int) + size);
+				root.append(jrow);
 			}
 			if (isEmpty)
 			{
@@ -208,20 +206,28 @@ void communicate(int fd)
 				sendn(fd, b, sizeof(int));
 				cout << "no res" << endl;
 			}
+			else
+			{
+				FastWriter fw;
+				string ss = fw.write(root);
+				int size = ss.size();
+				char b[sizeof(int) + size];
+				memcpy(b, &size, sizeof(int));
+				memcpy(b + sizeof(int), ss.c_str(), size);
+				sendn(fd, b, sizeof(int) + size);
+			}
 		}
-		int x = -5;
-		char bx[sizeof(int)];
-		memcpy(bx, &x, sizeof(int));
-		sendn(fd, bx, sizeof(int));
 
 		break; }
 
 	case query_all: {
 		cout << "query_all" << endl;
+
 		auto cpool = ConnPool::getInstance();
 		auto conn = cpool->get();
+
 		bool query_res = conn->query("select * from main_table;");
-		cout << "query res: " << query_res << endl;
+		Value root;
 		while (auto row = conn->next())
 		{
 			Value jrow;
@@ -231,19 +237,18 @@ void communicate(int fd)
 				if (field_data) jrow.append(field_data);
 				else jrow.append("");
 			}
-			FastWriter fw;
-			string ss = fw.write(jrow);
-			int size = ss.size();
-			cout << "sent size  is " << size << endl;
-			char b[sizeof(int) + size];
-			memcpy(b, &size, sizeof(int));
-			memcpy(b + sizeof(int), ss.c_str(), size);
-			sendn(fd, b, sizeof(int) + size);
+			root.append(jrow);
 		}
-		int x = -5;
-		char bx[sizeof(int)];
-		memcpy(bx, &x, sizeof(int));
-		sendn(fd, bx, sizeof(int));
+
+		FastWriter fw;
+		string ss = fw.write(root);
+		int size = ss.size();
+		cout << "sent size  is " << size << endl;
+		char b[sizeof(int) + size];
+		memcpy(b, &size, sizeof(int));
+		memcpy(b + sizeof(int), ss.c_str(), size);
+		sendn(fd, b, sizeof(int) + size);
+
 		cout << "query all end" << endl;
 
 		break; }
@@ -283,13 +288,15 @@ void communicate(int fd)
 			memcpy(b, &update_error, sizeof(int));
 			sendn(fd, b, sizeof(int));
 			cout << "update error !" << endl;
-			break;
 		}
-		int update_success = -3;
-		char b[sizeof(int)];
-		memcpy(b, &update_success, sizeof(int));
-		sendn(fd, b, sizeof(int));
-		cout << "update success !" << endl;
+		else
+		{
+			int update_success = -3;
+			char b[sizeof(int)];
+			memcpy(b, &update_success, sizeof(int));
+			sendn(fd, b, sizeof(int));
+			cout << "update success !" << endl;
+		}
 
 		break; }
 	
@@ -329,13 +336,15 @@ void communicate(int fd)
 			memcpy(b, &insert_error, sizeof(int));
 			sendn(fd, b, sizeof(int));
 			cout << "insert1 error !" << endl;
-			break;
 		}
-		int insert_error = -2;
-		char b[sizeof(int)];
-		memcpy(b, &insert_error, sizeof(int));
-		sendn(fd, b, sizeof(int));
-		cout << "insert1 success !" << endl;
+		else
+		{
+			int insert_error = -2;
+			char b[sizeof(int)];
+			memcpy(b, &insert_error, sizeof(int));
+			sendn(fd, b, sizeof(int));
+			cout << "insert1 success !" << endl;
+		}
 
 		break; }
 
@@ -358,6 +367,7 @@ void communicate(int fd)
 		memcpy(b, &size, sizeof(int));
 		memcpy(b + sizeof(int), s.c_str(), size);
 		sendn(fd, b, sizeof(int) + size);
+
 		cout << "query key end" << endl;
 
 		break; }
@@ -375,7 +385,7 @@ void communicate(int fd)
 		for (int i = 0; i < 11; ++i)
 		{
 			std::getline(iss, parts[i], '^');
-			if (i < 6)
+			if (i <= 6)
 			{
 				parts[i] = '\'' + parts[i] + '\'';
 			}
@@ -408,13 +418,73 @@ void communicate(int fd)
 			memcpy(b, &insert_error, sizeof(int));
 			sendn(fd, b, sizeof(int));
 			cout << "insert2 error !" << endl;
+		}
+		else
+		{
+			int insert_error = -2;
+			char b[sizeof(int)];
+			memcpy(b, &insert_error, sizeof(int));
+			sendn(fd, b, sizeof(int));
+			cout << "insert2 success !" << endl;
+		}
+
+		break; }
+
+	case insert3: {
+		cout << "insert3" << endl;
+		msg.data = new char[msg.length + 1];
+		if (!readn(fd, msg.data, msg.length)) return;
+		msg.data[msg.length] = '\0';
+		string s(msg.data);
+		delete[] msg.data;
+		msg.data = nullptr;
+		istringstream iss(s); // 将字符串包装成输入流
+		string parts[44]; // 存储每个部分的字符串
+		for (int i = 0; i < 44; ++i)
+		{
+			std::getline(iss, parts[i], '^');
+			if (i == 1 || i == 5 || i == 9 || i == 13 || i == 17 || i == 22 || i == 23 || i == 25 || i == 26 || i == 28 || i == 29 || i == 31 || i == 32 || i == 34 || i == 35 || i == 37 || i == 38 || i == 40 || i == 43 || i==0)
+			{
+				parts[i] = '\'' + parts[i] + '\'';
+			}
+		}
+
+		auto cpool = ConnPool::getInstance();
+		auto conn = cpool->get();
+
+		bool query_res = conn->query("select * from main_table where invoice_num = " + parts[0] + " ;");
+		bool isEmpty = true;
+		if (conn->next()) isEmpty = false;
+		if (isEmpty)
+		{
+			int insert_null = -3;
+			char b[sizeof(int)];
+			memcpy(b, &insert_null, sizeof(int));
+			sendn(fd, b, sizeof(int));
+			cout << "insert3 null !" << endl;
 			break;
 		}
-		int insert_error = -2;
-		char b[sizeof(int)];
-		memcpy(b, &insert_error, sizeof(int));
-		sendn(fd, b, sizeof(int));
-		cout << "insert2 success !" << endl;
+
+		string sql = "update main_table set collect_date1 = " + parts[1] + ", collect_amount1 = " + parts[2] + ", ex_rate1 = " + parts[3] + ", rmb_amount1 = " + parts[4] + ", collect_date2 = " + parts[5] + ", collect_amount2 = " + parts[6] + ", ex_rate2 = " + parts[7] + ", rmb_amount2 = " + parts[8] + ", collect_date3 = " + parts[9] + ", collect_amount3 = " + parts[10] + ", ex_rate3 = " + parts[11] + ", rmb_amount3 = " + parts[12] + ", collect_date4 = " + parts[13] + ", collect_amount4 = " + parts[14] + ", ex_rate4 = " + parts[15] + ", rmb_amount4 = " + parts[16] + ", collect_date5 = " + parts[17] + ", collect_amount5 = " + parts[18] + ", ex_rate5 = " + parts[19] + ", rmb_amount5 = " + parts[20] + ", uncollect_amount = " + parts[21] + ", pay_date1 = " + parts[22] + ", gain_person1 = " + parts[23] + ", pay_amount1 = " + parts[24] + ", pay_date2 = " + parts[25] + ", gain_person2 = " + parts[26] + ", pay_amount2 = " + parts[27] + ", pay_date3 = " + parts[28] + ", gain_person3 = " + parts[29] + ", pay_amount3 = " + parts[30] + ", pay_date4 = " + parts[31] + ", gain_person4 = " + parts[32] + ", pay_amount4 = " + parts[33] + ", pay_date5 = " + parts[34] + ", gain_person5 = " + parts[35] + ", pay_amount5 = " + parts[36] + ", pay_date6 = " + parts[37] + ", gain_person6 = " + parts[38] + ", pay_amount6 = " + parts[39] + ", invoice_date = " + parts[40] + ", invoice_amount = " + parts[41] + ", uninvoice_amount = " + parts[42] + ", remark = " + parts[43] + " where invoice_num = " + parts[0] + " ;";
+		cout << sql << endl;
+		bool insert_res = conn->update(sql);
+		cout << "insert3 res: " << insert_res << endl;
+		if (!insert_res)
+		{
+			int insert_error = -1;
+			char b[sizeof(int)];
+			memcpy(b, &insert_error, sizeof(int));
+			sendn(fd, b, sizeof(int));
+			cout << "insert3 error !" << endl;
+		}
+		else
+		{
+			int insert_error = -2;
+			char b[sizeof(int)];
+			memcpy(b, &insert_error, sizeof(int));
+			sendn(fd, b, sizeof(int));
+			cout << "insert3 success !" << endl;
+		}
 
 		break; }
 	}
@@ -451,7 +521,7 @@ void communicate(int fd)
 int main()
 {
 	auto tpool = Threadpool::getInstance();
-	tpool->init(20);
+	tpool->init(8);
 
 	int lfd = socket(AF_INET, SOCK_STREAM, 0);
 	sockaddr_in addr;
@@ -524,7 +594,7 @@ bool readn(int fd, void* buf, int cnt)
 		}
 		else if (nread == 0)
 		{
-			cout << "client disconnect ! close fd" << endl;
+			cout << "client disconnect ! close fd " << fd << endl;
 			unique_lock<std::mutex> lock(mtx);
 			epoll_ctl(epfd, EPOLL_CTL_DEL, fd, NULL);
 			lock.unlock();

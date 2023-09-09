@@ -1,22 +1,1575 @@
-<UI version="4.0" >
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
  <class>MainWindow5Class</class>
- <widget class="QWidget" name="MainWindow5Class" >
-  <property name="objectName" >
-   <string notr="true">MainWindow5Class</string>
-  </property>
-  <property name="geometry" >
+ <widget class="QWidget" name="MainWindow5Class">
+  <property name="geometry">
    <rect>
-	<x>0</x>
-	<y>0</y>
-	<width>600</width>
-	<height>400</height>
+    <x>0</x>
+    <y>0</y>
+    <width>1245</width>
+    <height>1334</height>
    </rect>
   </property>
-  <property name="windowTitle" >
+  <property name="windowTitle">
    <string>MainWindow5</string>
-  </property>$centralwidget$
+  </property>
+  <layout class="QVBoxLayout" name="verticalLayout_7">
+   <item>
+    <widget class="QWidget" name="widget" native="true">
+     <layout class="QHBoxLayout" name="horizontalLayout">
+      <item>
+       <spacer name="horizontalSpacer_14">
+        <property name="orientation">
+         <enum>Qt::Horizontal</enum>
+        </property>
+        <property name="sizeHint" stdset="0">
+         <size>
+          <width>40</width>
+          <height>20</height>
+         </size>
+        </property>
+       </spacer>
+      </item>
+      <item>
+       <widget class="QPushButton" name="queryButton">
+        <property name="font">
+         <font>
+          <pointsize>17</pointsize>
+         </font>
+        </property>
+        <property name="text">
+         <string>查询</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <spacer name="horizontalSpacer_15">
+        <property name="orientation">
+         <enum>Qt::Horizontal</enum>
+        </property>
+        <property name="sizeHint" stdset="0">
+         <size>
+          <width>40</width>
+          <height>20</height>
+         </size>
+        </property>
+       </spacer>
+      </item>
+      <item>
+       <widget class="QPushButton" name="insertButton1">
+        <property name="font">
+         <font>
+          <pointsize>17</pointsize>
+         </font>
+        </property>
+        <property name="text">
+         <string> 订单录入 </string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <spacer name="horizontalSpacer">
+        <property name="orientation">
+         <enum>Qt::Horizontal</enum>
+        </property>
+        <property name="sizeHint" stdset="0">
+         <size>
+          <width>40</width>
+          <height>20</height>
+         </size>
+        </property>
+       </spacer>
+      </item>
+      <item>
+       <widget class="QPushButton" name="insertButton2">
+        <property name="font">
+         <font>
+          <pointsize>17</pointsize>
+         </font>
+        </property>
+        <property name="text">
+         <string> 报关信息录入 </string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <spacer name="horizontalSpacer_2">
+        <property name="orientation">
+         <enum>Qt::Horizontal</enum>
+        </property>
+        <property name="sizeHint" stdset="0">
+         <size>
+          <width>40</width>
+          <height>20</height>
+         </size>
+        </property>
+       </spacer>
+      </item>
+      <item>
+       <widget class="QPushButton" name="insertButton3">
+        <property name="font">
+         <font>
+          <pointsize>17</pointsize>
+         </font>
+        </property>
+        <property name="text">
+         <string> 收汇付款录入 </string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <spacer name="horizontalSpacer_16">
+        <property name="orientation">
+         <enum>Qt::Horizontal</enum>
+        </property>
+        <property name="sizeHint" stdset="0">
+         <size>
+          <width>40</width>
+          <height>20</height>
+         </size>
+        </property>
+       </spacer>
+      </item>
+      <item>
+       <widget class="QPushButton" name="chatButton">
+        <property name="font">
+         <font>
+          <pointsize>17</pointsize>
+         </font>
+        </property>
+        <property name="text">
+         <string>聊天</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <spacer name="horizontalSpacer_17">
+        <property name="orientation">
+         <enum>Qt::Horizontal</enum>
+        </property>
+        <property name="sizeHint" stdset="0">
+         <size>
+          <width>40</width>
+          <height>20</height>
+         </size>
+        </property>
+       </spacer>
+      </item>
+      <item>
+       <widget class="QPushButton" name="uploadButton">
+        <property name="font">
+         <font>
+          <pointsize>17</pointsize>
+         </font>
+        </property>
+        <property name="text">
+         <string> 上传文件 </string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <spacer name="horizontalSpacer_13">
+        <property name="orientation">
+         <enum>Qt::Horizontal</enum>
+        </property>
+        <property name="sizeHint" stdset="0">
+         <size>
+          <width>40</width>
+          <height>20</height>
+         </size>
+        </property>
+       </spacer>
+      </item>
+     </layout>
+    </widget>
+   </item>
+   <item>
+    <widget class="QScrollArea" name="scrollArea">
+     <property name="widgetResizable">
+      <bool>true</bool>
+     </property>
+     <widget class="QWidget" name="scrollAreaWidgetContents_2">
+      <property name="geometry">
+       <rect>
+        <x>0</x>
+        <y>-20</y>
+        <width>1208</width>
+        <height>1272</height>
+       </rect>
+      </property>
+      <layout class="QHBoxLayout" name="horizontalLayout_22">
+       <item>
+        <widget class="QWidget" name="widget_64" native="true">
+         <layout class="QHBoxLayout" name="horizontalLayout_50">
+          <item>
+           <widget class="QWidget" name="widget_27" native="true">
+            <layout class="QVBoxLayout" name="verticalLayout_6">
+             <item>
+              <widget class="QWidget" name="widget_2" native="true">
+               <layout class="QVBoxLayout" name="verticalLayout">
+                <item>
+                 <widget class="QWidget" name="widget_6" native="true">
+                  <layout class="QHBoxLayout" name="horizontalLayout_2">
+                   <item>
+                    <widget class="QLabel" name="label_2">
+                     <property name="font">
+                      <font>
+                       <pointsize>15</pointsize>
+                      </font>
+                     </property>
+                     <property name="text">
+                      <string>收汇日期一：</string>
+                     </property>
+                    </widget>
+                   </item>
+                   <item>
+                    <widget class="QLineEdit" name="collect_date1">
+                     <property name="font">
+                      <font>
+                       <pointsize>15</pointsize>
+                      </font>
+                     </property>
+                    </widget>
+                   </item>
+                  </layout>
+                 </widget>
+                </item>
+                <item>
+                 <widget class="QWidget" name="widget_7" native="true">
+                  <layout class="QHBoxLayout" name="horizontalLayout_3">
+                   <item>
+                    <widget class="QLabel" name="label_3">
+                     <property name="font">
+                      <font>
+                       <pointsize>15</pointsize>
+                      </font>
+                     </property>
+                     <property name="text">
+                      <string>收汇金额一：</string>
+                     </property>
+                    </widget>
+                   </item>
+                   <item>
+                    <widget class="QLineEdit" name="collect_amount1">
+                     <property name="font">
+                      <font>
+                       <pointsize>15</pointsize>
+                      </font>
+                     </property>
+                    </widget>
+                   </item>
+                  </layout>
+                 </widget>
+                </item>
+                <item>
+                 <widget class="QWidget" name="widget_8" native="true">
+                  <layout class="QHBoxLayout" name="horizontalLayout_4">
+                   <item>
+                    <widget class="QLabel" name="label_4">
+                     <property name="font">
+                      <font>
+                       <pointsize>15</pointsize>
+                      </font>
+                     </property>
+                     <property name="text">
+                      <string>汇率一：</string>
+                     </property>
+                    </widget>
+                   </item>
+                   <item>
+                    <widget class="QLineEdit" name="ex_rate1">
+                     <property name="font">
+                      <font>
+                       <pointsize>15</pointsize>
+                      </font>
+                     </property>
+                    </widget>
+                   </item>
+                  </layout>
+                 </widget>
+                </item>
+                <item>
+                 <widget class="QWidget" name="widget_9" native="true">
+                  <property name="font">
+                   <font>
+                    <pointsize>15</pointsize>
+                   </font>
+                  </property>
+                  <layout class="QHBoxLayout" name="horizontalLayout_5">
+                   <item>
+                    <widget class="QLabel" name="label_5">
+                     <property name="font">
+                      <font>
+                       <pointsize>15</pointsize>
+                      </font>
+                     </property>
+                     <property name="text">
+                      <string>折人民币一：</string>
+                     </property>
+                    </widget>
+                   </item>
+                   <item>
+                    <widget class="QLineEdit" name="rmb_amount1">
+                     <property name="font">
+                      <font>
+                       <pointsize>15</pointsize>
+                      </font>
+                     </property>
+                    </widget>
+                   </item>
+                  </layout>
+                 </widget>
+                </item>
+               </layout>
+              </widget>
+             </item>
+             <item>
+              <widget class="QWidget" name="widget_26" native="true">
+               <layout class="QVBoxLayout" name="verticalLayout_5">
+                <item>
+                 <widget class="QWidget" name="widget_10" native="true">
+                  <layout class="QHBoxLayout" name="horizontalLayout_6">
+                   <item>
+                    <widget class="QLabel" name="label_6">
+                     <property name="font">
+                      <font>
+                       <pointsize>15</pointsize>
+                      </font>
+                     </property>
+                     <property name="text">
+                      <string>收汇日期二：</string>
+                     </property>
+                    </widget>
+                   </item>
+                   <item>
+                    <widget class="QLineEdit" name="collect_date2">
+                     <property name="font">
+                      <font>
+                       <pointsize>15</pointsize>
+                      </font>
+                     </property>
+                    </widget>
+                   </item>
+                  </layout>
+                 </widget>
+                </item>
+                <item>
+                 <widget class="QWidget" name="widget_11" native="true">
+                  <layout class="QHBoxLayout" name="horizontalLayout_7">
+                   <item>
+                    <widget class="QLabel" name="label_7">
+                     <property name="font">
+                      <font>
+                       <pointsize>15</pointsize>
+                      </font>
+                     </property>
+                     <property name="text">
+                      <string>收汇金额二：</string>
+                     </property>
+                    </widget>
+                   </item>
+                   <item>
+                    <widget class="QLineEdit" name="collect_amount2">
+                     <property name="font">
+                      <font>
+                       <pointsize>15</pointsize>
+                      </font>
+                     </property>
+                    </widget>
+                   </item>
+                  </layout>
+                 </widget>
+                </item>
+                <item>
+                 <widget class="QWidget" name="widget_12" native="true">
+                  <layout class="QHBoxLayout" name="horizontalLayout_8">
+                   <item>
+                    <widget class="QLabel" name="label_8">
+                     <property name="font">
+                      <font>
+                       <pointsize>15</pointsize>
+                      </font>
+                     </property>
+                     <property name="text">
+                      <string>汇率二：</string>
+                     </property>
+                    </widget>
+                   </item>
+                   <item>
+                    <widget class="QLineEdit" name="ex_rate2">
+                     <property name="font">
+                      <font>
+                       <pointsize>15</pointsize>
+                      </font>
+                     </property>
+                    </widget>
+                   </item>
+                  </layout>
+                 </widget>
+                </item>
+                <item>
+                 <widget class="QWidget" name="widget_13" native="true">
+                  <layout class="QHBoxLayout" name="horizontalLayout_9">
+                   <item>
+                    <widget class="QLabel" name="label_9">
+                     <property name="font">
+                      <font>
+                       <pointsize>15</pointsize>
+                      </font>
+                     </property>
+                     <property name="text">
+                      <string>折人民币二：</string>
+                     </property>
+                    </widget>
+                   </item>
+                   <item>
+                    <widget class="QLineEdit" name="rmb_amount2">
+                     <property name="font">
+                      <font>
+                       <pointsize>15</pointsize>
+                      </font>
+                     </property>
+                    </widget>
+                   </item>
+                  </layout>
+                 </widget>
+                </item>
+               </layout>
+              </widget>
+             </item>
+             <item>
+              <widget class="QWidget" name="widget_5" native="true">
+               <layout class="QVBoxLayout" name="verticalLayout_4">
+                <item>
+                 <widget class="QWidget" name="widget_14" native="true">
+                  <layout class="QHBoxLayout" name="horizontalLayout_10">
+                   <item>
+                    <widget class="QLabel" name="label_10">
+                     <property name="font">
+                      <font>
+                       <pointsize>15</pointsize>
+                      </font>
+                     </property>
+                     <property name="text">
+                      <string>收汇日期三：</string>
+                     </property>
+                    </widget>
+                   </item>
+                   <item>
+                    <widget class="QLineEdit" name="collect_date3">
+                     <property name="font">
+                      <font>
+                       <pointsize>15</pointsize>
+                      </font>
+                     </property>
+                    </widget>
+                   </item>
+                  </layout>
+                 </widget>
+                </item>
+                <item>
+                 <widget class="QWidget" name="widget_15" native="true">
+                  <layout class="QHBoxLayout" name="horizontalLayout_11">
+                   <item>
+                    <widget class="QLabel" name="label_11">
+                     <property name="font">
+                      <font>
+                       <pointsize>15</pointsize>
+                      </font>
+                     </property>
+                     <property name="text">
+                      <string>收汇金额三：</string>
+                     </property>
+                    </widget>
+                   </item>
+                   <item>
+                    <widget class="QLineEdit" name="collect_amount3">
+                     <property name="font">
+                      <font>
+                       <pointsize>15</pointsize>
+                      </font>
+                     </property>
+                    </widget>
+                   </item>
+                  </layout>
+                 </widget>
+                </item>
+                <item>
+                 <widget class="QWidget" name="widget_16" native="true">
+                  <layout class="QHBoxLayout" name="horizontalLayout_12">
+                   <item>
+                    <widget class="QLabel" name="label_12">
+                     <property name="font">
+                      <font>
+                       <pointsize>15</pointsize>
+                      </font>
+                     </property>
+                     <property name="text">
+                      <string>汇率三：</string>
+                     </property>
+                    </widget>
+                   </item>
+                   <item>
+                    <widget class="QLineEdit" name="ex_rate3">
+                     <property name="font">
+                      <font>
+                       <pointsize>15</pointsize>
+                      </font>
+                     </property>
+                    </widget>
+                   </item>
+                  </layout>
+                 </widget>
+                </item>
+                <item>
+                 <widget class="QWidget" name="widget_17" native="true">
+                  <layout class="QHBoxLayout" name="horizontalLayout_13">
+                   <item>
+                    <widget class="QLabel" name="label_13">
+                     <property name="font">
+                      <font>
+                       <pointsize>15</pointsize>
+                      </font>
+                     </property>
+                     <property name="text">
+                      <string>折人民币三：</string>
+                     </property>
+                    </widget>
+                   </item>
+                   <item>
+                    <widget class="QLineEdit" name="rmb_amount3">
+                     <property name="font">
+                      <font>
+                       <pointsize>15</pointsize>
+                      </font>
+                     </property>
+                    </widget>
+                   </item>
+                  </layout>
+                 </widget>
+                </item>
+               </layout>
+              </widget>
+             </item>
+             <item>
+              <widget class="QWidget" name="widget_3" native="true">
+               <layout class="QVBoxLayout" name="verticalLayout_2">
+                <item>
+                 <widget class="QWidget" name="widget_18" native="true">
+                  <layout class="QHBoxLayout" name="horizontalLayout_14">
+                   <item>
+                    <widget class="QLabel" name="label_14">
+                     <property name="font">
+                      <font>
+                       <pointsize>15</pointsize>
+                      </font>
+                     </property>
+                     <property name="text">
+                      <string>收汇日期四：</string>
+                     </property>
+                    </widget>
+                   </item>
+                   <item>
+                    <widget class="QLineEdit" name="collect_date4">
+                     <property name="font">
+                      <font>
+                       <pointsize>15</pointsize>
+                      </font>
+                     </property>
+                    </widget>
+                   </item>
+                  </layout>
+                 </widget>
+                </item>
+                <item>
+                 <widget class="QWidget" name="widget_19" native="true">
+                  <layout class="QHBoxLayout" name="horizontalLayout_15">
+                   <item>
+                    <widget class="QLabel" name="label_15">
+                     <property name="font">
+                      <font>
+                       <pointsize>15</pointsize>
+                      </font>
+                     </property>
+                     <property name="text">
+                      <string>收汇金额四：</string>
+                     </property>
+                    </widget>
+                   </item>
+                   <item>
+                    <widget class="QLineEdit" name="collect_amount4">
+                     <property name="font">
+                      <font>
+                       <pointsize>15</pointsize>
+                      </font>
+                     </property>
+                    </widget>
+                   </item>
+                  </layout>
+                 </widget>
+                </item>
+                <item>
+                 <widget class="QWidget" name="widget_20" native="true">
+                  <layout class="QHBoxLayout" name="horizontalLayout_16">
+                   <item>
+                    <widget class="QLabel" name="label_16">
+                     <property name="font">
+                      <font>
+                       <pointsize>15</pointsize>
+                      </font>
+                     </property>
+                     <property name="text">
+                      <string>汇率四：</string>
+                     </property>
+                    </widget>
+                   </item>
+                   <item>
+                    <widget class="QLineEdit" name="ex_rate4">
+                     <property name="font">
+                      <font>
+                       <pointsize>15</pointsize>
+                      </font>
+                     </property>
+                    </widget>
+                   </item>
+                  </layout>
+                 </widget>
+                </item>
+                <item>
+                 <widget class="QWidget" name="widget_21" native="true">
+                  <layout class="QHBoxLayout" name="horizontalLayout_17">
+                   <item>
+                    <widget class="QLabel" name="label_17">
+                     <property name="font">
+                      <font>
+                       <pointsize>15</pointsize>
+                      </font>
+                     </property>
+                     <property name="text">
+                      <string>折人民币四：</string>
+                     </property>
+                    </widget>
+                   </item>
+                   <item>
+                    <widget class="QLineEdit" name="rmb_amount4">
+                     <property name="font">
+                      <font>
+                       <pointsize>15</pointsize>
+                      </font>
+                     </property>
+                    </widget>
+                   </item>
+                  </layout>
+                 </widget>
+                </item>
+               </layout>
+              </widget>
+             </item>
+             <item>
+              <widget class="QWidget" name="widget_4" native="true">
+               <layout class="QVBoxLayout" name="verticalLayout_3">
+                <item>
+                 <widget class="QWidget" name="widget_23" native="true">
+                  <layout class="QHBoxLayout" name="horizontalLayout_19">
+                   <item>
+                    <widget class="QLabel" name="label_19">
+                     <property name="font">
+                      <font>
+                       <pointsize>15</pointsize>
+                      </font>
+                     </property>
+                     <property name="text">
+                      <string>收汇日期五：</string>
+                     </property>
+                    </widget>
+                   </item>
+                   <item>
+                    <widget class="QLineEdit" name="collect_date5">
+                     <property name="font">
+                      <font>
+                       <pointsize>15</pointsize>
+                      </font>
+                     </property>
+                    </widget>
+                   </item>
+                  </layout>
+                 </widget>
+                </item>
+                <item>
+                 <widget class="QWidget" name="widget_24" native="true">
+                  <layout class="QHBoxLayout" name="horizontalLayout_20">
+                   <item>
+                    <widget class="QLabel" name="label_20">
+                     <property name="font">
+                      <font>
+                       <pointsize>15</pointsize>
+                      </font>
+                     </property>
+                     <property name="text">
+                      <string>收汇金额五：</string>
+                     </property>
+                    </widget>
+                   </item>
+                   <item>
+                    <widget class="QLineEdit" name="collect_amount5">
+                     <property name="font">
+                      <font>
+                       <pointsize>15</pointsize>
+                      </font>
+                     </property>
+                    </widget>
+                   </item>
+                  </layout>
+                 </widget>
+                </item>
+                <item>
+                 <widget class="QWidget" name="widget_25" native="true">
+                  <layout class="QHBoxLayout" name="horizontalLayout_21">
+                   <item>
+                    <widget class="QLabel" name="label_21">
+                     <property name="font">
+                      <font>
+                       <pointsize>15</pointsize>
+                      </font>
+                     </property>
+                     <property name="text">
+                      <string>汇率五：</string>
+                     </property>
+                    </widget>
+                   </item>
+                   <item>
+                    <widget class="QLineEdit" name="ex_rate5">
+                     <property name="font">
+                      <font>
+                       <pointsize>15</pointsize>
+                      </font>
+                     </property>
+                    </widget>
+                   </item>
+                  </layout>
+                 </widget>
+                </item>
+                <item>
+                 <widget class="QWidget" name="widget_22" native="true">
+                  <layout class="QHBoxLayout" name="horizontalLayout_18">
+                   <item>
+                    <widget class="QLabel" name="label_18">
+                     <property name="font">
+                      <font>
+                       <pointsize>15</pointsize>
+                      </font>
+                     </property>
+                     <property name="text">
+                      <string>折人民币五：</string>
+                     </property>
+                    </widget>
+                   </item>
+                   <item>
+                    <widget class="QLineEdit" name="rmb_amount5">
+                     <property name="font">
+                      <font>
+                       <pointsize>15</pointsize>
+                      </font>
+                     </property>
+                    </widget>
+                   </item>
+                  </layout>
+                 </widget>
+                </item>
+               </layout>
+              </widget>
+             </item>
+             <item>
+              <widget class="QWidget" name="widget_28" native="true">
+               <layout class="QHBoxLayout" name="horizontalLayout_27">
+                <item>
+                 <widget class="QLabel" name="label_27">
+                  <property name="font">
+                   <font>
+                    <pointsize>15</pointsize>
+                   </font>
+                  </property>
+                  <property name="text">
+                   <string>未收汇金额：</string>
+                  </property>
+                 </widget>
+                </item>
+                <item>
+                 <widget class="QLineEdit" name="uncollect_amount">
+                  <property name="font">
+                   <font>
+                    <pointsize>15</pointsize>
+                   </font>
+                  </property>
+                 </widget>
+                </item>
+               </layout>
+              </widget>
+             </item>
+            </layout>
+           </widget>
+          </item>
+          <item>
+           <widget class="QWidget" name="widget_57" native="true">
+            <layout class="QVBoxLayout" name="verticalLayout_14">
+             <item>
+              <widget class="QWidget" name="widget_33" native="true">
+               <layout class="QVBoxLayout" name="verticalLayout_8">
+                <item>
+                 <widget class="QWidget" name="widget_34" native="true">
+                  <layout class="QHBoxLayout" name="horizontalLayout_28">
+                   <item>
+                    <widget class="QLabel" name="label_28">
+                     <property name="font">
+                      <font>
+                       <pointsize>15</pointsize>
+                      </font>
+                     </property>
+                     <property name="text">
+                      <string>付款日期一：</string>
+                     </property>
+                    </widget>
+                   </item>
+                   <item>
+                    <widget class="QLineEdit" name="pay_date1">
+                     <property name="font">
+                      <font>
+                       <pointsize>15</pointsize>
+                      </font>
+                     </property>
+                    </widget>
+                   </item>
+                  </layout>
+                 </widget>
+                </item>
+                <item>
+                 <widget class="QWidget" name="widget_35" native="true">
+                  <layout class="QHBoxLayout" name="horizontalLayout_29">
+                   <item>
+                    <widget class="QLabel" name="label_29">
+                     <property name="font">
+                      <font>
+                       <pointsize>15</pointsize>
+                      </font>
+                     </property>
+                     <property name="text">
+                      <string>收款人一：</string>
+                     </property>
+                    </widget>
+                   </item>
+                   <item>
+                    <widget class="QLineEdit" name="gain_person1">
+                     <property name="font">
+                      <font>
+                       <pointsize>15</pointsize>
+                      </font>
+                     </property>
+                    </widget>
+                   </item>
+                  </layout>
+                 </widget>
+                </item>
+                <item>
+                 <widget class="QWidget" name="widget_36" native="true">
+                  <layout class="QHBoxLayout" name="horizontalLayout_30">
+                   <item>
+                    <widget class="QLabel" name="label_30">
+                     <property name="font">
+                      <font>
+                       <pointsize>15</pointsize>
+                      </font>
+                     </property>
+                     <property name="text">
+                      <string>付款金额一：</string>
+                     </property>
+                    </widget>
+                   </item>
+                   <item>
+                    <widget class="QLineEdit" name="pay_amount1">
+                     <property name="font">
+                      <font>
+                       <pointsize>15</pointsize>
+                      </font>
+                     </property>
+                    </widget>
+                   </item>
+                  </layout>
+                 </widget>
+                </item>
+               </layout>
+              </widget>
+             </item>
+             <item>
+              <widget class="QWidget" name="widget_37" native="true">
+               <layout class="QVBoxLayout" name="verticalLayout_9">
+                <item>
+                 <widget class="QWidget" name="widget_38" native="true">
+                  <layout class="QHBoxLayout" name="horizontalLayout_31">
+                   <item>
+                    <widget class="QLabel" name="label_31">
+                     <property name="font">
+                      <font>
+                       <pointsize>15</pointsize>
+                      </font>
+                     </property>
+                     <property name="text">
+                      <string>付款日期二：</string>
+                     </property>
+                    </widget>
+                   </item>
+                   <item>
+                    <widget class="QLineEdit" name="pay_date2">
+                     <property name="font">
+                      <font>
+                       <pointsize>15</pointsize>
+                      </font>
+                     </property>
+                    </widget>
+                   </item>
+                  </layout>
+                 </widget>
+                </item>
+                <item>
+                 <widget class="QWidget" name="widget_39" native="true">
+                  <layout class="QHBoxLayout" name="horizontalLayout_32">
+                   <item>
+                    <widget class="QLabel" name="label_32">
+                     <property name="font">
+                      <font>
+                       <pointsize>15</pointsize>
+                      </font>
+                     </property>
+                     <property name="text">
+                      <string>收款人二：</string>
+                     </property>
+                    </widget>
+                   </item>
+                   <item>
+                    <widget class="QLineEdit" name="gain_person2">
+                     <property name="font">
+                      <font>
+                       <pointsize>15</pointsize>
+                      </font>
+                     </property>
+                    </widget>
+                   </item>
+                  </layout>
+                 </widget>
+                </item>
+                <item>
+                 <widget class="QWidget" name="widget_40" native="true">
+                  <layout class="QHBoxLayout" name="horizontalLayout_33">
+                   <item>
+                    <widget class="QLabel" name="label_33">
+                     <property name="font">
+                      <font>
+                       <pointsize>15</pointsize>
+                      </font>
+                     </property>
+                     <property name="text">
+                      <string>付款金额二：</string>
+                     </property>
+                    </widget>
+                   </item>
+                   <item>
+                    <widget class="QLineEdit" name="pay_amount2">
+                     <property name="font">
+                      <font>
+                       <pointsize>15</pointsize>
+                      </font>
+                     </property>
+                    </widget>
+                   </item>
+                  </layout>
+                 </widget>
+                </item>
+               </layout>
+              </widget>
+             </item>
+             <item>
+              <widget class="QWidget" name="widget_41" native="true">
+               <layout class="QVBoxLayout" name="verticalLayout_10">
+                <item>
+                 <widget class="QWidget" name="widget_42" native="true">
+                  <layout class="QHBoxLayout" name="horizontalLayout_34">
+                   <item>
+                    <widget class="QLabel" name="label_34">
+                     <property name="font">
+                      <font>
+                       <pointsize>15</pointsize>
+                      </font>
+                     </property>
+                     <property name="text">
+                      <string>付款日期三：</string>
+                     </property>
+                    </widget>
+                   </item>
+                   <item>
+                    <widget class="QLineEdit" name="pay_date3">
+                     <property name="font">
+                      <font>
+                       <pointsize>15</pointsize>
+                      </font>
+                     </property>
+                    </widget>
+                   </item>
+                  </layout>
+                 </widget>
+                </item>
+                <item>
+                 <widget class="QWidget" name="widget_43" native="true">
+                  <layout class="QHBoxLayout" name="horizontalLayout_35">
+                   <item>
+                    <widget class="QLabel" name="label_35">
+                     <property name="font">
+                      <font>
+                       <pointsize>15</pointsize>
+                      </font>
+                     </property>
+                     <property name="text">
+                      <string>收款人三：</string>
+                     </property>
+                    </widget>
+                   </item>
+                   <item>
+                    <widget class="QLineEdit" name="gain_person3">
+                     <property name="font">
+                      <font>
+                       <pointsize>15</pointsize>
+                      </font>
+                     </property>
+                    </widget>
+                   </item>
+                  </layout>
+                 </widget>
+                </item>
+                <item>
+                 <widget class="QWidget" name="widget_44" native="true">
+                  <layout class="QHBoxLayout" name="horizontalLayout_36">
+                   <item>
+                    <widget class="QLabel" name="label_36">
+                     <property name="font">
+                      <font>
+                       <pointsize>15</pointsize>
+                      </font>
+                     </property>
+                     <property name="text">
+                      <string>付款金额三：</string>
+                     </property>
+                    </widget>
+                   </item>
+                   <item>
+                    <widget class="QLineEdit" name="pay_amount3">
+                     <property name="font">
+                      <font>
+                       <pointsize>15</pointsize>
+                      </font>
+                     </property>
+                    </widget>
+                   </item>
+                  </layout>
+                 </widget>
+                </item>
+               </layout>
+              </widget>
+             </item>
+             <item>
+              <widget class="QWidget" name="widget_45" native="true">
+               <layout class="QVBoxLayout" name="verticalLayout_11">
+                <item>
+                 <widget class="QWidget" name="widget_46" native="true">
+                  <layout class="QHBoxLayout" name="horizontalLayout_37">
+                   <item>
+                    <widget class="QLabel" name="label_37">
+                     <property name="font">
+                      <font>
+                       <pointsize>15</pointsize>
+                      </font>
+                     </property>
+                     <property name="text">
+                      <string>付款日期四：</string>
+                     </property>
+                    </widget>
+                   </item>
+                   <item>
+                    <widget class="QLineEdit" name="pay_date4">
+                     <property name="font">
+                      <font>
+                       <pointsize>15</pointsize>
+                      </font>
+                     </property>
+                    </widget>
+                   </item>
+                  </layout>
+                 </widget>
+                </item>
+                <item>
+                 <widget class="QWidget" name="widget_47" native="true">
+                  <layout class="QHBoxLayout" name="horizontalLayout_38">
+                   <item>
+                    <widget class="QLabel" name="label_38">
+                     <property name="font">
+                      <font>
+                       <pointsize>15</pointsize>
+                      </font>
+                     </property>
+                     <property name="text">
+                      <string>收款人四：</string>
+                     </property>
+                    </widget>
+                   </item>
+                   <item>
+                    <widget class="QLineEdit" name="gain_person4">
+                     <property name="font">
+                      <font>
+                       <pointsize>15</pointsize>
+                      </font>
+                     </property>
+                    </widget>
+                   </item>
+                  </layout>
+                 </widget>
+                </item>
+                <item>
+                 <widget class="QWidget" name="widget_48" native="true">
+                  <layout class="QHBoxLayout" name="horizontalLayout_39">
+                   <item>
+                    <widget class="QLabel" name="label_39">
+                     <property name="font">
+                      <font>
+                       <pointsize>15</pointsize>
+                      </font>
+                     </property>
+                     <property name="text">
+                      <string>付款金额四：</string>
+                     </property>
+                    </widget>
+                   </item>
+                   <item>
+                    <widget class="QLineEdit" name="pay_amount4">
+                     <property name="font">
+                      <font>
+                       <pointsize>15</pointsize>
+                      </font>
+                     </property>
+                    </widget>
+                   </item>
+                  </layout>
+                 </widget>
+                </item>
+               </layout>
+              </widget>
+             </item>
+             <item>
+              <widget class="QWidget" name="widget_49" native="true">
+               <layout class="QVBoxLayout" name="verticalLayout_12">
+                <item>
+                 <widget class="QWidget" name="widget_50" native="true">
+                  <layout class="QHBoxLayout" name="horizontalLayout_40">
+                   <item>
+                    <widget class="QLabel" name="label_40">
+                     <property name="font">
+                      <font>
+                       <pointsize>15</pointsize>
+                      </font>
+                     </property>
+                     <property name="text">
+                      <string>付款日期五：</string>
+                     </property>
+                    </widget>
+                   </item>
+                   <item>
+                    <widget class="QLineEdit" name="pay_date5">
+                     <property name="font">
+                      <font>
+                       <pointsize>15</pointsize>
+                      </font>
+                     </property>
+                    </widget>
+                   </item>
+                  </layout>
+                 </widget>
+                </item>
+                <item>
+                 <widget class="QWidget" name="widget_51" native="true">
+                  <layout class="QHBoxLayout" name="horizontalLayout_41">
+                   <item>
+                    <widget class="QLabel" name="label_41">
+                     <property name="font">
+                      <font>
+                       <pointsize>15</pointsize>
+                      </font>
+                     </property>
+                     <property name="text">
+                      <string>收款人五：</string>
+                     </property>
+                    </widget>
+                   </item>
+                   <item>
+                    <widget class="QLineEdit" name="gain_person5">
+                     <property name="font">
+                      <font>
+                       <pointsize>15</pointsize>
+                      </font>
+                     </property>
+                    </widget>
+                   </item>
+                  </layout>
+                 </widget>
+                </item>
+                <item>
+                 <widget class="QWidget" name="widget_52" native="true">
+                  <layout class="QHBoxLayout" name="horizontalLayout_42">
+                   <item>
+                    <widget class="QLabel" name="label_42">
+                     <property name="font">
+                      <font>
+                       <pointsize>15</pointsize>
+                      </font>
+                     </property>
+                     <property name="text">
+                      <string>付款金额五：</string>
+                     </property>
+                    </widget>
+                   </item>
+                   <item>
+                    <widget class="QLineEdit" name="pay_amount5">
+                     <property name="font">
+                      <font>
+                       <pointsize>15</pointsize>
+                      </font>
+                     </property>
+                    </widget>
+                   </item>
+                  </layout>
+                 </widget>
+                </item>
+               </layout>
+              </widget>
+             </item>
+             <item>
+              <widget class="QWidget" name="widget_53" native="true">
+               <layout class="QVBoxLayout" name="verticalLayout_13">
+                <item>
+                 <widget class="QWidget" name="widget_54" native="true">
+                  <layout class="QHBoxLayout" name="horizontalLayout_43">
+                   <item>
+                    <widget class="QLabel" name="label_43">
+                     <property name="font">
+                      <font>
+                       <pointsize>15</pointsize>
+                      </font>
+                     </property>
+                     <property name="text">
+                      <string>付款日期六：</string>
+                     </property>
+                    </widget>
+                   </item>
+                   <item>
+                    <widget class="QLineEdit" name="pay_date6">
+                     <property name="font">
+                      <font>
+                       <pointsize>15</pointsize>
+                      </font>
+                     </property>
+                    </widget>
+                   </item>
+                  </layout>
+                 </widget>
+                </item>
+                <item>
+                 <widget class="QWidget" name="widget_55" native="true">
+                  <layout class="QHBoxLayout" name="horizontalLayout_44">
+                   <item>
+                    <widget class="QLabel" name="label_44">
+                     <property name="font">
+                      <font>
+                       <pointsize>15</pointsize>
+                      </font>
+                     </property>
+                     <property name="text">
+                      <string>收款人六：</string>
+                     </property>
+                    </widget>
+                   </item>
+                   <item>
+                    <widget class="QLineEdit" name="gain_person6">
+                     <property name="font">
+                      <font>
+                       <pointsize>15</pointsize>
+                      </font>
+                     </property>
+                    </widget>
+                   </item>
+                  </layout>
+                 </widget>
+                </item>
+                <item>
+                 <widget class="QWidget" name="widget_56" native="true">
+                  <layout class="QHBoxLayout" name="horizontalLayout_45">
+                   <item>
+                    <widget class="QLabel" name="label_45">
+                     <property name="font">
+                      <font>
+                       <pointsize>15</pointsize>
+                      </font>
+                     </property>
+                     <property name="text">
+                      <string>付款金额六：</string>
+                     </property>
+                    </widget>
+                   </item>
+                   <item>
+                    <widget class="QLineEdit" name="pay_amount6">
+                     <property name="font">
+                      <font>
+                       <pointsize>15</pointsize>
+                      </font>
+                     </property>
+                    </widget>
+                   </item>
+                  </layout>
+                 </widget>
+                </item>
+               </layout>
+              </widget>
+             </item>
+            </layout>
+           </widget>
+          </item>
+          <item>
+           <widget class="QWidget" name="widget_61" native="true">
+            <layout class="QVBoxLayout" name="verticalLayout_15">
+             <item>
+              <widget class="QWidget" name="widget_58" native="true">
+               <layout class="QHBoxLayout" name="horizontalLayout_46">
+                <item>
+                 <widget class="QLabel" name="label_46">
+                  <property name="font">
+                   <font>
+                    <pointsize>15</pointsize>
+                   </font>
+                  </property>
+                  <property name="text">
+                   <string>开票日期：</string>
+                  </property>
+                 </widget>
+                </item>
+                <item>
+                 <widget class="QLineEdit" name="invoice_date">
+                  <property name="font">
+                   <font>
+                    <pointsize>15</pointsize>
+                   </font>
+                  </property>
+                 </widget>
+                </item>
+               </layout>
+              </widget>
+             </item>
+             <item>
+              <widget class="QWidget" name="widget_59" native="true">
+               <layout class="QHBoxLayout" name="horizontalLayout_47">
+                <item>
+                 <widget class="QLabel" name="label_47">
+                  <property name="font">
+                   <font>
+                    <pointsize>15</pointsize>
+                   </font>
+                  </property>
+                  <property name="text">
+                   <string>开票金额：</string>
+                  </property>
+                 </widget>
+                </item>
+                <item>
+                 <widget class="QLineEdit" name="invoice_amount">
+                  <property name="font">
+                   <font>
+                    <pointsize>15</pointsize>
+                   </font>
+                  </property>
+                 </widget>
+                </item>
+               </layout>
+              </widget>
+             </item>
+             <item>
+              <widget class="QWidget" name="widget_60" native="true">
+               <layout class="QHBoxLayout" name="horizontalLayout_48">
+                <item>
+                 <widget class="QLabel" name="label_48">
+                  <property name="font">
+                   <font>
+                    <pointsize>15</pointsize>
+                   </font>
+                  </property>
+                  <property name="text">
+                   <string>未付金额：</string>
+                  </property>
+                 </widget>
+                </item>
+                <item>
+                 <widget class="QLineEdit" name="uninvoice_amount">
+                  <property name="font">
+                   <font>
+                    <pointsize>15</pointsize>
+                   </font>
+                  </property>
+                 </widget>
+                </item>
+               </layout>
+              </widget>
+             </item>
+             <item>
+              <widget class="QLabel" name="label_49">
+               <property name="font">
+                <font>
+                 <pointsize>15</pointsize>
+                </font>
+               </property>
+               <property name="text">
+                <string>备注：</string>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QTextEdit" name="remark"/>
+             </item>
+             <item>
+              <widget class="QWidget" name="widget_65" native="true">
+               <layout class="QHBoxLayout" name="horizontalLayout_51">
+                <item>
+                 <widget class="QLabel" name="label_51">
+                  <property name="font">
+                   <font>
+                    <pointsize>15</pointsize>
+                   </font>
+                  </property>
+                  <property name="text">
+                   <string>发票号：</string>
+                  </property>
+                 </widget>
+                </item>
+                <item>
+                 <widget class="QComboBox" name="invoice_num">
+                  <property name="font">
+                   <font>
+                    <pointsize>15</pointsize>
+                   </font>
+                  </property>
+                 </widget>
+                </item>
+               </layout>
+              </widget>
+             </item>
+             <item>
+              <widget class="QWidget" name="widget_63" native="true">
+               <layout class="QHBoxLayout" name="horizontalLayout_49">
+                <item>
+                 <spacer name="horizontalSpacer_3">
+                  <property name="orientation">
+                   <enum>Qt::Horizontal</enum>
+                  </property>
+                  <property name="sizeHint" stdset="0">
+                   <size>
+                    <width>40</width>
+                    <height>20</height>
+                   </size>
+                  </property>
+                 </spacer>
+                </item>
+                <item>
+                 <widget class="QPushButton" name="submit">
+                  <property name="font">
+                   <font>
+                    <pointsize>15</pointsize>
+                   </font>
+                  </property>
+                  <property name="text">
+                   <string>提交</string>
+                  </property>
+                 </widget>
+                </item>
+                <item>
+                 <spacer name="horizontalSpacer_4">
+                  <property name="orientation">
+                   <enum>Qt::Horizontal</enum>
+                  </property>
+                  <property name="sizeHint" stdset="0">
+                   <size>
+                    <width>134</width>
+                    <height>20</height>
+                   </size>
+                  </property>
+                 </spacer>
+                </item>
+               </layout>
+              </widget>
+             </item>
+             <item>
+              <spacer name="verticalSpacer">
+               <property name="orientation">
+                <enum>Qt::Vertical</enum>
+               </property>
+               <property name="sizeHint" stdset="0">
+                <size>
+                 <width>20</width>
+                 <height>40</height>
+                </size>
+               </property>
+              </spacer>
+             </item>
+             <item>
+              <widget class="QWidget" name="widget_62" native="true">
+               <widget class="QLabel" name="label_50">
+                <property name="geometry">
+                 <rect>
+                  <x>9</x>
+                  <y>9</y>
+                  <width>80</width>
+                  <height>26</height>
+                 </rect>
+                </property>
+                <property name="font">
+                 <font>
+                  <pointsize>15</pointsize>
+                 </font>
+                </property>
+                <property name="text">
+                 <string>发票号：</string>
+                </property>
+               </widget>
+               <widget class="QComboBox" name="comboBox">
+                <property name="geometry">
+                 <rect>
+                  <x>92</x>
+                  <y>11</y>
+                  <width>271</width>
+                  <height>21</height>
+                 </rect>
+                </property>
+                <property name="font">
+                 <font>
+                  <pointsize>15</pointsize>
+                 </font>
+                </property>
+               </widget>
+              </widget>
+             </item>
+            </layout>
+           </widget>
+          </item>
+         </layout>
+        </widget>
+       </item>
+      </layout>
+     </widget>
+    </widget>
+   </item>
+  </layout>
  </widget>
- <layoutDefault spacing="6" margin="11" />
- <pixmapfunction></pixmapfunction>
+ <layoutdefault spacing="6" margin="11"/>
+ <resources/>
  <connections/>
-</UI>
+</ui>

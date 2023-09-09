@@ -5,7 +5,6 @@
 #include <QCompleter>
 #include <QTimer>
 #include <QMessageBox>
-#include <QDebug>
 #include <unordered_map>
 #include <QJsonArray>
 #include "sceneloader.h"
@@ -25,8 +24,6 @@ MainWindow2::MainWindow2(QWidget *parent)
 	, ui(new Ui::MainWindow2Class())
 {
 	ui->setupUi(this);
-
-    qDebug() << "MainWindow2 thread: " << QThread::currentThread();
 
     um_init();
     QStringList headers
@@ -97,8 +94,8 @@ MainWindow2::MainWindow2(QWidget *parent)
 
     qyt = new Query;
     queryThread = new QThread;
-    qyt->moveToThread(queryThread);
     queryThread->start();
+    qyt->moveToThread(queryThread);
 
     connect(this, &MainWindow2::timetosend, qyt, &Query::sendData);
     QTimer* queryTimer = new QTimer(this);
@@ -121,7 +118,6 @@ MainWindow2::MainWindow2(QWidget *parent)
     });
     connect(ui->querySubmit, &QPushButton::clicked, this, [=]()
     {
-        qDebug() << "query clicked !";
         ui->table->clearContents();
         ui->table->setRowCount(0);
         if (ui->querySubmit->isEnabled())
@@ -144,7 +140,7 @@ MainWindow2::MainWindow2(QWidget *parent)
             QString max = ui->queryMax->text();
             QString s = um[field] + "^" + min + "^" + max;
             QByteArray msg = s.toUtf8();
-            emit timetosend(range, msg);
+            emit timetosend(range, msg);      
         }
     });
     connect(qyt, &Query::query_finish, this, [=](int size, QJsonArray* res)
@@ -180,6 +176,8 @@ MainWindow2::MainWindow2(QWidget *parent)
         {
             QString s = "";
             QByteArray msg = s.toUtf8();
+            ui->table->clearContents();
+            ui->table->setRowCount(0);
             emit timetosend(query_all, msg);
             QMessageBox query_error;
             query_error.setIcon(QMessageBox::Information);
@@ -190,14 +188,16 @@ MainWindow2::MainWindow2(QWidget *parent)
         }
         else
         {
-            int cnt = ui->table->rowCount();
-            ui->table->insertRow(cnt);
-            qDebug() << "zhe shi row " << res->at(0).toString();
-            for (int j = 0; j < res->size(); j++)
+            for (int i = 0; i < res->size(); i++)
             {
-                QTableWidgetItem* item = new QTableWidgetItem(res->at(j).toString());
-                item->setTextAlignment(Qt::AlignVCenter | Qt::AlignHCenter);
-                ui->table->setItem(cnt, j, item);
+                ui->table->insertRow(i);
+                auto row = res->at(i).toArray();
+                for (int j = 0; j < row.size(); j++)
+                {
+                    QTableWidgetItem* item = new QTableWidgetItem(row[j].toString());
+                    item->setTextAlignment(Qt::AlignVCenter | Qt::AlignHCenter);
+                    ui->table->setItem(i, j, item);
+                }
             }
             delete res;
         }
@@ -216,7 +216,7 @@ MainWindow2::MainWindow2(QWidget *parent)
         emit timetosend(query_all, msg);
     });
     connect(ui->updateSubmit, &QPushButton::clicked, this, [=]()
-    {
+{
         if (ui->updateSubmit->isEnabled())
         {
             ui->updateSubmit->setEnabled(false);
@@ -256,7 +256,7 @@ MainWindow2::MainWindow2(QWidget *parent)
         {
             QString s = um[field] + "^" + content + "^" + key;
             QByteArray msg = s.toUtf8();
-            emit timetosend(update_one, msg);
+            emit timetosend(update_one, msg); 
         }
     });
     QString s = "";

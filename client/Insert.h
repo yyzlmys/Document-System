@@ -16,4 +16,10 @@ public slots:
 
 signals:
     void insert_finish(int size, QJsonArray* res);
+
+private:
+    bool rh = false;
+    int size = 0;
+    QByteArray d;
+
 };

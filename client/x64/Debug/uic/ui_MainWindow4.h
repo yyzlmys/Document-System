@@ -41,6 +41,7 @@ public:
     QSpacerItem *horizontalSpacer_17;
     QPushButton *uploadButton;
     QSpacerItem *horizontalSpacer_13;
+    QSpacerItem *verticalSpacer;
     QWidget *widget_2;
     QVBoxLayout *verticalLayout;
     QWidget *widget_6;
@@ -109,6 +110,8 @@ public:
     QLabel *label_40;
     QLineEdit *packages_num;
     QSpacerItem *horizontalSpacer_82;
+    QSpacerItem *verticalSpacer_2;
+    QSpacerItem *verticalSpacer_3;
     QWidget *widget_19;
     QHBoxLayout *horizontalLayout_17;
     QSpacerItem *horizontalSpacer_3;
@@ -124,7 +127,7 @@ public:
     {
         if (MainWindow4Class->objectName().isEmpty())
             MainWindow4Class->setObjectName("MainWindow4Class");
-        MainWindow4Class->resize(1043, 798);
+        MainWindow4Class->resize(1198, 872);
         verticalLayout_2 = new QVBoxLayout(MainWindow4Class);
         verticalLayout_2->setSpacing(6);
         verticalLayout_2->setContentsMargins(11, 11, 11, 11);
@@ -204,6 +207,10 @@ public:
 
         verticalLayout_2->addWidget(widget);
 
+        verticalSpacer = new QSpacerItem(20, 40, QSizePolicy::Minimum, QSizePolicy::Expanding);
+
+        verticalLayout_2->addItem(verticalSpacer);
+
         widget_2 = new QWidget(MainWindow4Class);
         widget_2->setObjectName("widget_2");
         verticalLayout = new QVBoxLayout(widget_2);
@@ -230,6 +237,7 @@ public:
 
         invoice_num = new QComboBox(widget_6);
         invoice_num->setObjectName("invoice_num");
+        invoice_num->setFont(font1);
 
         horizontalLayout_2->addWidget(invoice_num);
 
@@ -529,6 +537,14 @@ public:
 
 
         verticalLayout->addWidget(widget_33);
+
+        verticalSpacer_2 = new QSpacerItem(20, 40, QSizePolicy::Minimum, QSizePolicy::Expanding);
+
+        verticalLayout->addItem(verticalSpacer_2);
+
+        verticalSpacer_3 = new QSpacerItem(20, 40, QSizePolicy::Minimum, QSizePolicy::Expanding);
+
+        verticalLayout->addItem(verticalSpacer_3);
 
 
         verticalLayout_2->addWidget(widget_2);

@@ -5,7 +5,6 @@
 #include <QCompleter>
 #include <QTimer>
 #include <QMessageBox>
-#include <QDebug>
 #include <QJsonArray>
 #include "sceneloader.h"
 #define sign_in 1
@@ -24,6 +23,7 @@ MainWindow3::MainWindow3(QWidget *parent)
 {
 	ui->setupUi(this);
 
+    ui->label_2->setStyleSheet("QLabel { color : red; }");
     ui->submit_2->hide();
     ui->insertButton1->setDisabled(true);
     ui->trader_name->setEditable(true);
@@ -52,35 +52,39 @@ MainWindow3::MainWindow3(QWidget *parent)
 
     it = new Insert;
     insertThread = new QThread;
-    it->moveToThread(insertThread);
     insertThread->start();
+    it->moveToThread(insertThread);
 
     connect(this, &MainWindow3::timetosend, it, &Insert::sendData);
     connect(it, &Insert::insert_finish, this, [=](int size, QJsonArray* res)
     {
         if (size >= 0)
         {
-            QString tn = res->at(3).toString();
-            QString gn = res->at(4).toString();
-            QString fn = res->at(12).toString();
-            QString sn = res->at(13).toString();
-            //trader_names->append(tn);
-            //goods_names->append(gn);
-            //forwarder_names->append(fn);
-            //supplier_names->append(sn);
+            for (int i = 0; i < res->size(); i++)
+            {
+                QJsonArray ja = res->at(i).toArray();
+                QString tn = ja[3].toString();
+                QString gn = ja[4].toString();
+                QString fn = ja[12].toString();
+                QString sn = ja[13].toString();
+                trader_names->append(tn);
+                goods_names->append(gn);
+                forwarder_names->append(fn);
+                supplier_names->append(sn);
+            }
             delete res;
-            ui->trader_name->addItem(tn);
-            //QCompleter* trader_nameCompleter = new QCompleter(*trader_names, this);
-            //ui->trader_name->setCompleter(trader_nameCompleter);
-            ui->goods_name->addItem(gn);
-            //QCompleter* goods_nameCompleter = new QCompleter(*goods_names, this);
-            //ui->goods_name->setCompleter(goods_nameCompleter);
-            ui->forwarder_name->addItem(fn);
-            //QCompleter* forwarder_nameCompleter = new QCompleter(*forwarder_names, this);
-            //ui->forwarder_name->setCompleter(forwarder_nameCompleter);
-            ui->supplier_name->addItem(sn);
-            //QCompleter* supplier_nameCompleter = new QCompleter(*supplier_names, this);
-            //ui->supplier_name->setCompleter(supplier_nameCompleter);
+            ui->trader_name->addItems(*trader_names);
+            QCompleter* trader_nameCompleter = new QCompleter(*trader_names, this);
+            ui->trader_name->setCompleter(trader_nameCompleter);
+            ui->goods_name->addItems(*goods_names);
+            QCompleter* goods_nameCompleter = new QCompleter(*goods_names, this);
+            ui->goods_name->setCompleter(goods_nameCompleter);
+            ui->forwarder_name->addItems(*forwarder_names);
+            QCompleter* forwarder_nameCompleter = new QCompleter(*forwarder_names, this);
+            ui->forwarder_name->setCompleter(forwarder_nameCompleter);
+            ui->supplier_name->addItems(*supplier_names);
+            QCompleter* supplier_nameCompleter = new QCompleter(*supplier_names, this);
+            ui->supplier_name->setCompleter(supplier_nameCompleter);
         }
         else if (size == -1)
         {
@@ -125,7 +129,7 @@ MainWindow3::MainWindow3(QWidget *parent)
     });
     QString s="";
     QByteArray msg=s.toUtf8();
-    emit timetosend(query_all,msg);
+    emit timetosend(query_all, msg);    
 }
 
 MainWindow3::~MainWindow3()

@@ -1,7 +1,10 @@
 #pragma once
 
-#include <QWidget>
 #include "ui_MainWindow5.h"
+#include <QWidget>
+#include <QThread>
+#include <QTcpSocket>
+#include "Insert.h"
 
 QT_BEGIN_NAMESPACE
 namespace Ui { class MainWindow5Class; };
@@ -12,9 +15,14 @@ class MainWindow5 : public QWidget
 	Q_OBJECT
 
 public:
-	MainWindow5(QWidget *parent = nullptr);
+	explicit MainWindow5(QWidget *parent = nullptr);
 	~MainWindow5();
 
 private:
 	Ui::MainWindow5Class *ui;
+	Insert* it = nullptr;
+	QThread* insertThread = nullptr;
+
+signals:
+	void timetosend(int messageType, const QByteArray& data);
 };

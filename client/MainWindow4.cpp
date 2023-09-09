@@ -5,7 +5,6 @@
 #include <QCompleter>
 #include <QTimer>
 #include <QMessageBox>
-#include <QDebug>
 #include <QJsonArray>
 #include "SceneLoader.h"
 #define sign_in 1
@@ -23,6 +22,7 @@ MainWindow4::MainWindow4(QWidget *parent)
 {
 	ui.setupUi(this);
 
+    ui.label_2->setStyleSheet("QLabel { color : red; }");
     ui.insertButton2->setDisabled(true);
     ui.submit_2->hide();
     ui.invoice_num->setEditable(true);
@@ -45,8 +45,8 @@ MainWindow4::MainWindow4(QWidget *parent)
 
     it = new Insert;
     insertThread = new QThread;
-    it->moveToThread(insertThread);
     insertThread->start();
+    it->moveToThread(insertThread);
 
     connect(this, &MainWindow4::timetosend, it, &Insert::sendData);
     connect(it, &Insert::insert_finish, this, [=](int size, QJsonArray* res)

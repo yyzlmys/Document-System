@@ -21,17 +21,16 @@ MainWindow1::MainWindow1(QWidget *parent)
 {
     ui.setupUi(this);
 
-    qDebug() << "MainWindow1 thread: " << QThread::currentThread();
+    ui.passwd->setEchoMode(QLineEdit::Password);
 
     st = new SignIn;
     signThread = new QThread;
-    st->moveToThread(signThread);
     signThread->start();
+    st->moveToThread(signThread);
 
     connect(this, &MainWindow1::timetosend, st, &SignIn::sendData);
     connect(ui.sign, &QPushButton::clicked, this, [=]() //µã»÷µÇÂ¼°´Å¥
     {
-        qDebug() << "signin clicked !";
         auto account = ui.account->text();
         auto passwd = ui.passwd->text();
         QString s = account + "@" + passwd;
@@ -59,8 +58,8 @@ MainWindow1::MainWindow1(QWidget *parent)
         {
             QMessageBox log_error;
             log_error.setIcon(QMessageBox::Critical);
-            log_error.setWindowTitle("sign in failed !");
-            log_error.setText("wrong acount or password !");
+            log_error.setWindowTitle("µÇÂ¼Ê§°Ü£¡");
+            log_error.setText("ÕËºÅ»òÃÜÂë´íÎó£¡");
             log_error.setStandardButtons(QMessageBox::Ok);
             log_error.exec();
         }

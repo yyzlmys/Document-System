@@ -5,23 +5,3 @@ QMAKE_CXX.COMPILER_MACROS = \
     QT_COMPILER_STDCXX \
     QMAKE_MSC_VER \
     QMAKE_MSC_FULL_VER
-QMAKE_CXX.INCDIRS = \
-    D:\\qt6\\6.5.2\\msvc2019_64\\include \
-    D:\\vs2022\\VC\\Tools\\MSVC\\14.37.32822\\include \
-    D:\\vs2022\\VC\\Tools\\MSVC\\14.37.32822\\atlmfc\\include \
-    D:\\vs2022\\VC\\Auxiliary\\VS\\include \
-    "C:\\Program Files (x86)\\Windows Kits\\10\\Include\\10.0.22621.0\\ucrt" \
-    D:\\vs2022\\VC\\Auxiliary\\VS\\UnitTest\\include \
-    "C:\\Program Files (x86)\\Windows Kits\\10\\Include\\10.0.22621.0\\um" \
-    "C:\\Program Files (x86)\\Windows Kits\\10\\Include\\10.0.22621.0\\shared" \
-    "C:\\Program Files (x86)\\Windows Kits\\10\\Include\\10.0.22621.0\\winrt" \
-    "C:\\Program Files (x86)\\Windows Kits\\10\\Include\\10.0.22621.0\\cppwinrt" \
-    "C:\\Program Files (x86)\\Windows Kits\\NETFXSDK\\4.8\\Include\\um"
-QMAKE_CXX.LIBDIRS = \
-    D:\\vs2022\\VC\\Tools\\MSVC\\14.37.32822\\lib\\x64 \
-    D:\\vs2022\\VC\\Tools\\MSVC\\14.37.32822\\atlmfc\\lib\\x64 \
-    D:\\vs2022\\VC\\Auxiliary\\VS\\lib\\x64 \
-    "C:\\Program Files (x86)\\Windows Kits\\10\\lib\\10.0.22621.0\\ucrt\\x64" \
-    D:\\vs2022\\VC\\Auxiliary\\VS\\UnitTest\\lib \
-    "C:\\Program Files (x86)\\Windows Kits\\10\\lib\\10.0.22621.0\\um\\x64" \
-    "C:\\Program Files (x86)\\Windows Kits\\NETFXSDK\\4.8\\lib\\um\\x64"
